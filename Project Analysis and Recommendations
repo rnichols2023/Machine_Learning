@@ -1,32 +1,37 @@
-## 🧩 Problem Statement
-
-This study aims to develop a predictive model for forecasting total bicycle sales seven days in advance. The objective is to enable data‑driven adjustments to inventory levels and pricing strategies, thereby optimizing operational efficiency and market responsiveness.
+# Final Project: Predicting Total Bike Rental Sales  
+Rachel Nichols — Belhaven University  
+Dr. Andrews — MDS-620 — Making Data Decisions
 
 ---
 
-## 📌 Overall Observations
+## Problem Statement
 
-To address the challenge of forecasting total bicycle sales and informing inventory and pricing decisions, multiple predictive approaches were evaluated. After standardizing the dataset to ensure compatibility with regression and time series techniques, **Multiple Linear Regression** and **Time Series Analysis** were selected as the primary modeling frameworks.
+This study aims to develop a predictive model for forecasting total bicycle sales seven days in advance. The objective is to enable data-driven adjustments to inventory levels and pricing strategies, thereby optimizing operational efficiency and market responsiveness.
 
-### **Regression Modeling**
+---
+
+## Overall Observations
+
+To address the challenge of forecasting total bicycle sales and informing inventory and pricing decisions, multiple predictive approaches were evaluated. After standardizing the dataset to ensure compatibility with regression and time series techniques, Multiple Linear Regression and Time Series Analysis were selected as the primary modeling frameworks.
+
+### Regression Modeling
 - Predictors selected: temperature, humidity, windspeed, and working day  
 - Ridge Regression produced the lowest RMSE and most stable performance  
-- Best suited for **short‑term (7‑day) forecasting**
+- Best suited for short-term (7-day) forecasting  
 
-### **Time Series Modeling**
+### Time Series Modeling
 - Included season, year, month, holiday, weekday, working day, weather conditions, temperature, atemp, humidity, and windspeed  
-- 7‑day moving average produced the lowest error across all time series methods  
-- Effective for weekly operational planning
+- The 7-day moving average produced the lowest error across all time series methods  
+- Effective for weekly operational planning  
 
-### **Key Insight**
-Both Ridge Regression and the 7‑day moving average provide reliable short‑term forecasts.  
-Performance declines for long‑term (30‑day+) predictions, so weekly forecasting is recommended.
+### Key Insight
+Both Ridge Regression and the 7-day moving average provide reliable short-term forecasts. Performance declines for long-term (30-day or more) predictions, so weekly forecasting is recommended.
 
 ---
 
-## 📊 Visualizations
+## Visualizations
 
-(Insert your images here — GitHub will display them automatically if they’re in your repo.)
+(Insert your images here. GitHub will display them automatically if they are in your repo.)
 
 - Total Bike Count by Season  
 - Total Bike Count by Year  
@@ -42,56 +47,53 @@ Performance declines for long‑term (30‑day+) predictions, so weekly forecast
 
 ---
 
-## 📈 Multiple Linear Regression
+## Multiple Linear Regression
 
-The dataset was partitioned into training and validation sets (40% training).  
-Model performance was evaluated using standard regression metrics.
+The dataset was partitioned into training and validation sets (40 percent training). Model performance was evaluated using standard regression metrics.
 
-### **Initial Regression Results**
+### Initial Regression Results
 - RMSE: 0.7560  
 - MAE: 0.6252  
 - MAPE: 231.0998  
 
-### **Regularized Regression Comparison**
-Ridge, Lasso, and Bayesian Ridge were tested.  
-**Ridge Regression** performed best:
+### Regularized Regression Comparison
+Ridge, Lasso, and Bayesian Ridge were tested. Ridge Regression performed best:
 
 - RMSE: 0.7044  
 - MAE: 0.5743  
-- MPE: –129.6866  
+- MPE: -129.6866  
 - MAPE: 363.5149  
 
-### **Conclusion**
-Ridge Regression is the recommended model for **7‑day forecasting**, supporting inventory and pricing adjustments.
+### Conclusion
+Ridge Regression is the recommended model for 7-day forecasting, supporting inventory and pricing adjustments.
 
 ---
 
-## ⏱️ Time Series Analysis
+## Time Series Analysis
 
 A series of smoothing and forecasting methods were evaluated:
 
-- 7‑day moving average  
-- 30‑day moving average  
-- 7‑day weighted moving average  
-- Exponential smoothing (α = 0.2)  
+- 7-day moving average  
+- 30-day moving average  
+- 7-day weighted moving average  
+- Exponential smoothing (alpha = 0.2)  
 - Linear regression trend model  
 
-### **Error Metrics Evaluated**
+### Error Metrics Evaluated
 - MAPE  
 - MAE  
 - MSE  
 - RMSE  
 
-### **Findings**
-The **simple 7‑day moving average** consistently produced the lowest error across all metrics, making it the most reliable method for weekly forecasting.
+### Findings
+The simple 7-day moving average consistently produced the lowest error across all metrics, making it the most reliable method for weekly forecasting.
 
-### **Conclusion**
-The 7‑day moving average is recommended for short‑term operational planning due to its simplicity, interpretability, and accuracy.
+### Conclusion
+The 7-day moving average is recommended for short-term operational planning due to its simplicity, interpretability, and accuracy.
 
 ---
 
-## 🎯 Final Recommendation
+## Final Recommendation
 
-Use **Ridge Regression** and the **7‑day moving average** for weekly forecasting of bike rental demand.  
-Avoid long‑term forecasting (30‑day+) due to declining model accuracy.
+Use Ridge Regression and the 7-day moving average for weekly forecasting of bike rental demand. Avoid long-term forecasting (30 days or more) due to declining model accuracy.
 
